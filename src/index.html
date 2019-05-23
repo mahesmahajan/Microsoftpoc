@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Microsoft</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script>
+    document.onkeydown = function (e) {
+      e = e || window.event;//Get event
+      if (e.ctrlKey) {
+        var c = e.which || e.keyCode;//Get key code
+        switch (c) {
+          // case 65://Block CTRL+A
+          case 66: //Block CTRL+B ORGANISE FAVOURITES
+          // case 67: //Block CTRL+C COPY
+          case 68: //Block CTRL+D FAVOURITE
+          case 69: //Block CTRL+E
+          case 70: //Block CTRL+F SEARCH
+          case 71: //Block CTRL+G FEEDS
+          case 72: //Block CTRL+H HISTORY
+          case 73: //Block CTRL+I
+          case 74: //Block CTRL+J DOWNLOADS
+          case 75: //Block CTRL+K
+          case 76: //Block CTRL+L
+          case 78: //Block CTRL+N NEWTAB
+          case 79: //Block CTRL+O
+          case 80: //Block CTRL+P
+          case 82: //Block CTRL+R RELOAD
+          case 83: //Block CTRL+S SAVE
+          case 84: //Block CTRL+T NEWTAB
+          case 85: //Block CTRL+U
+          //case 86: //Block CTRL+V PASTE
+          case 87: //Block CTRL+W CLOSE WINDOW
+          case 88: //Block CTRL+X CLEAR
+          case 116: //Block CTRL+F5
+            e.preventDefault();
+            e.stopPropagation();
+            break;
+        }
+      }
+      else {
+        var c = e.which || e.keyCode;//Get key code
+        switch (c) {
+          case 116://Block F5
+            e.preventDefault();
+            e.stopPropagation();
+            break;
+        }
+      }
+    };
+  </script>
+  <script>
+    document.addEventListener('contextmenu', event => event.preventDefault());
+  </script>
+</head>
+
+<body>
+  <app-root></app-root>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+    
+<div class="container-fluid">
+  <kendo-dialog title="Message Box" *ngIf="ErrorNtf" (close)="closeConfirm()" [minWidth]="250" [width]="600"
+    [draggable]="true">
+    <div style="width:550px;max-height: calc(100vh - (360px));">
+      {{ErrMessage}}
+    </div>
+    <kendo-dialog-actions>
+      <button kendoButton (click)="closeConfirm()">Cancel</button>
+    </kendo-dialog-actions>
+  </kendo-dialog>
+  <kendo-grid [data]="gridData" class=" grid-height-for-ie" [pageable]="true" [loading]="loading"
+    [pageSize]="gridState.take" [skip]="gridState.skip"
+    style="width:device-width; position:relative; max-height: calc(100vh - (20px));margin-top:10px" [sortable]="true"
+    [scrollable]="true" [resizable]="false" (dataStateChange)="onStateChange($event)" textalign="center"
+    [sort]="gridState.sort" [columnMenu]="true" [navigable]="true">
+
+    <ng-template kendoGridToolbarTemplate>
+      <label><strong>Published POR's</strong></label>
+      <button kendoButton style="margin-left:25px;" (click)="navigateToDraft('Draft')" [look]="'outline'" [primary]="true">View
+        Drafts</button>
+      <button type="button" style="float: right;border:1px solid;border-color: black" kendoGridExcelCommand
+        icon="file-excel">Export to Excel</button>
+    </ng-template>
+
+    <kendo-grid-column field="PORType" title="Select POR" width="160" [locked]="true"
+      [style]="{'font-weight': 'bold','font-family':'MS Reference Sans Serif','line-height': '0.8em', 'font-size':'x-small','border-color': 'Black', 'border-bottom': '1px solid black','text-align': 'center'}"
+      [headerStyle]="{'background-color': 'rgb(0, 145, 235)','color': '#fff','line-height': '1em','font-size': 'x-small', 'font-weight': 'bold','font-family':'MS Reference Sans Serif', 'border-color': 'Black','text-align': 'center'}">
+      <ng-template kendoGridCellTemplate let-dataItem="dataItem">
+        <span (click)="open(dataItem.DocumentKey) " title="Click here to view the Document"
+          class="k-icon k-i-hyperlink-open-sm k-icon-icons"></span>
+        <span>View</span>
+      </ng-template>
+    </kendo-grid-column>
+    <kendo-grid-column field="PORType" title="POR Type" width="160" [locked]="true"
+      [style]="{'font-weight': 'bold','font-family':'MS Reference Sans Serif','line-height': '0.8em', 'font-size':'x-small','border-color': 'Black', 'border-bottom': '1px solid black','text-align': 'center'}"
+      [headerStyle]="{'background-color': 'rgb(0, 145, 235)','color': '#fff','line-height': '1em','font-size': 'x-small', 'font-weight': 'bold','font-family':'MS Reference Sans Serif', 'border-color': 'Black','text-align': 'center'}">
+      <ng-template kendoGridCellTemplate let-dataItem="dataItem">
+        <span title="{{dataItem.PORType}}">{{dataItem.PORType}}</span>
+      </ng-template>
+    </kendo-grid-column>
+    <kendo-grid-column field="PORID" title="POR ID" width="180" [locked]="true"
+      [style]="{'font-weight': 'bold','font-family':'MS Reference Sans Serif','line-height': '0.8em', 'font-size':'x-small','border-color': 'Black', 'border-bottom': '1px solid black','text-align': 'center'}"
+      [headerStyle]="{'background-color': 'rgb(0, 145, 235)','color': '#fff','line-height': '1em','font-size': 'x-small', 'font-weight': 'bold','font-family':'MS Reference Sans Serif', 'border-color': 'Black','text-align': 'center'}">
+      <ng-template kendoGridCellTemplate let-dataItem="dataItem">
+        <span title="{{dataItem.PORID}}">{{dataItem.PORID}} </span>
+      </ng-template>
+    </kendo-grid-column>
+    <kendo-grid-column field="ProductName" title="Product Name" width="250"
+      [style]="{'font-weight': 'bold','font-family':'MS Reference Sans Serif','line-height': '0.8em', 'font-size':'x-small','border-color': 'Black', 'border-bottom': '1px solid black','text-align': 'center'}"
+      [headerStyle]="{'background-color': 'rgb(0, 145, 235)','color': '#fff','line-height': '1em','font-size': 'x-small', 'font-weight': 'bold','font-family':'MS Reference Sans Serif', 'border-color': 'Black','text-align': 'center'}">
+      <ng-template kendoGridCellTemplate let-dataItem="dataItem">
+        <span title="{{dataItem.ProductName}}">{{dataItem.ProductName}} </span>
+      </ng-template>
+    </kendo-grid-column>
+    <kendo-grid-column field="ProductDescription" title="Product Description" width="600"
+      [style]="{'font-weight': 'bold','font-family':'MS Reference Sans Serif','line-height': '0.8em', 'font-size':'x-small','border-color': 'Black', 'border-bottom': '1px solid black','text-align': 'center'}"
+      [headerStyle]="{'background-color': 'rgb(0, 145, 235)','color': '#fff','line-height': '1em','font-size': 'x-small', 'font-weight': 'bold','font-family':'MS Reference Sans Serif', 'border-color': 'Black','text-align': 'center'}">
+      <ng-template kendoGridCellTemplate let-dataItem="dataItem">
+        <span title="{{dataItem.ProductDescription}}"> {{dataItem.ProductDescription}} </span>
+      </ng-template>
+    </kendo-grid-column>
+
+    <kendo-grid-excel fileName="DraftsView.xlsx"></kendo-grid-excel>
+  </kendo-grid>
+</div>
