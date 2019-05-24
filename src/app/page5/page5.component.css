@@ -5,6 +5,11 @@
   margin-right: 10px;
 }
 
+.link-small{
+  font-size:10px;
+  text-decoration: underline;
+}
+
 .table{
   border:1px solid #ccc;
 }

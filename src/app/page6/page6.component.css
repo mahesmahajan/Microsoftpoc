@@ -13,7 +13,7 @@
 }
 .list-view{
     width: 60%;
-    margin: 0 auto; 
+    margin: 0 auto;
 }
 
 .list-view ul {
@@ -22,7 +22,7 @@
     border: 1px solid #ccc;
 }
 .recepeint{
-    
+
     margin-left: 22%;
 }
 
@@ -44,8 +44,22 @@
     background-color: #f1f1f1;
     height: 100%;
   }
+  .canclebtn {
+    background-color: #008CBA;
+    padding: 12px 28px;
+      display:block;
+      margin-bottom:50px;
+    top: 100px;
+  }
+  .publishbtn {
+    background-color: #008CBA;
+    padding: 12px 28px;
 
-
+    bottom:400px;
+  }
+  #recipientList{
+    border:1px solid black;
+  }
 
   /* On small screens, set height to 'auto' for sidenav and grid */
   @media screen and (max-width: 767px) {

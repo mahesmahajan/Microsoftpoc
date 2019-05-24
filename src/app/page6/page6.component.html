@@ -1,66 +1,165 @@
-
-
 <div class="container-fluid">
-    <div class="header clearfix">
-        <p>Reason for Update</p>
-        <button class="btn btn-default btn-lg">Update Availiblity for wave 2</button>
-        <button class="btn btn-default pull-right btn-lg">Cancel</button>
-    </div>
-       
-    <div class="row content clearfix section-padding">
-
-      <div class="col-sm-2 text-left clearfix">
-        <p>Version Change?</p>
-        <div class="">
-                <input type="checkbox" class="col-sm-1 pull-left" value="yes">yes
-        </div>
-        <div class="">
-                <input type="checkbox" class="col-sm-1 pull-left" value="no">no
-        </div>
-      </div>
-      <div class="col-sm-6 text-left clearfix m-b">
-           <div class="col-sm-9">
-                <span>input recepeint</span>
-            <input type="text" class="form-control pull-left" placeholder="surfaceconsumer@microsoft.com">
-           </div> 
-           <button type="button" class="btn btn-default btn-sm">
-                <span class="glyphicon glyphicon-plus"></span> Add recipient
-              </button>   
-           
-          </div>
-      <div class="recepeint col-sm-6">
-            <label class="pull-left"> Recipient list</label>
-            <div class="list-view pull-left">
-                <ul>
-                    <li>
-                            <input type="checkbox" class="col-sm-1 pull-left" value="yes">urfaceconsumer@microsoft.com
-                    </li>
-                    <li>
-                            <input type="checkbox" class="col-sm-1 pull-left" value="yes">urfaceconsumer@microsoft.com
-                    </li>
-                    <li>
-                            <input type="checkbox" class="col-sm-1 pull-left" value="yes">urfaceconsumer@microsoft.com
-                    </li>
-                    <li>
-                            <input type="checkbox" class="col-sm-1 pull-left" value="yes">urfaceconsumer@microsoft.com
-                    </li>
-                    <li>
-                            <input type="checkbox" class="col-sm-1 pull-left" value="yes">urfaceconsumer@microsoft.com
-                    </li>
-                    <li>
-                            <input type="checkbox" class="col-sm-1 pull-left" value="yes">urfaceconsumer@microsoft.com
-                    </li>
-                    <li>
-                            <input type="checkbox" class="col-sm-1 pull-left" value="yes">urfaceconsumer@microsoft.com
-                    </li>
-                </ul>
-            </div>
-      </div>
-      <div class="col-xs-12">
-            <button type="button" class="btn btn-default btn-lg pull-right">
-                    <span class="glyphicon glyphicon-plus"></span> publish
-                  </button>  
-      </div>
-      
-    </div>
+  <div class="header clearfix">
   </div>
+
+  <div class="row content clearfix section-padding">
+
+          <div class="col-sm-3">
+                  <p>Reason for Update:</p>
+                  <textarea class="span6" rows="3" placeholder="Type your reason here" required></textarea>
+                  <p>Version Change?</p>
+                  <div class="radio">
+                          <label><input type="radio" name="optradio" checked>Yes</label>
+                  </div>
+                  <div class="radio">
+                          <label><input type="radio" name="optradio">No</label>
+                  </div>
+          </div>
+
+          <div class="col-sm-3">
+                  <div class="row mt-5"></div>
+                  <div class="form-group">
+                          <input type="email" class="form-control" id="exampleFormControlInput1"
+                                  placeholder="name@example.com">
+                  </div>
+                  <p>Recipient List:</p>
+                  <div id="recipientList">
+                          <div class="checkbox">
+                                  <label><input type="checkbox" value=""> arron@microsoft.com</label>
+                          </div>
+                          <div class="checkbox">
+                                  <label><input type="checkbox" value=""> bob@microsoft.com</label>
+                          </div>
+                          <div class="checkbox">
+                                  <label><input type="checkbox" value=""> ciri@microsoft.com</label>
+                          </div>
+                          <div class="checkbox">
+                                  <label><input type="checkbox" value=""> david@microsoft.com</label>
+                          </div>
+                          <div class="checkbox">
+                                  <label><input type="checkbox" value=""> elephant@microsoft.com</label>
+                          </div>
+                          <div class="checkbox">
+                                  <label><input type="checkbox" value=""> florence@microsoft.com</label>
+                          </div>
+                          <div class="checkbox">
+                                  <label><input type="checkbox" value=""> gameofthrone@microsoft.com</label>
+                          </div>
+                          <div class="checkbox">
+                                  <label><input type="checkbox" value=""> hamster@microsoft.com</label>
+                          </div>
+                          <div class="checkbox">
+                                  <label><input type="checkbox" value=""> illusional@microsoft.com</label>
+                          </div>
+                  </div>
+          </div>
+
+          <div class="col-sm-3">
+                  <div class="row mt-5"></div>
+                  <button type="button" class="btn btn-default btn-sm">+ Add Recipient</button>
+          </div>
+
+          <div class="col-sm-3">
+                  <button type="button" class="canclebtn">Cancle X</button>
+                  <button type="button" class="publishbtn" data-toggle="modal" data-target="#exampleModal">Publish
+                          →</button>
+          </div>
+
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title" id="exampleModalLabel">Are you sure you would like to publish xx POR and send to following recipients:</h5>
+<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+  <span aria-hidden="true">&times;</span>
+</button>
+</div>
+<div class="modal-body">
+<div>
+  <label> arron@microsoft.com</label>
+</div>
+<div>
+  <label> bob@microsoft.com</label>
+</div>
+<div>
+  <label> ciri@microsoft.com</label>
+</div>
+<div>
+  <label> david@microsoft.com</label>
+</div>
+<div>
+  <label> elephant@microsoft.com</label>
+</div>
+<div>
+  <label> florence@microsoft.com</label>
+</div>
+<div>
+  <label> gameofthrone@microsoft.com</label>
+</div>
+<div>
+  <label> hamster@microsoft.com</label>
+</div>
+<div>
+  <label> illusional@microsoft.com</label>
+</div>
+</div>
+<div class="modal-footer">
+<button type="button" class="btn btn-secondary" data-dismiss="modal">No X</button>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2">Yes ✓</button>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Modal 2-->
+<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title" id="exampleModalLabel">xx POR has been published and sent to following recipients:</h5>
+<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+  <span aria-hidden="true">&times;</span>
+</button>
+</div>
+<div class="modal-body">
+<div>
+  <label> arron@microsoft.com</label>
+</div>
+<div>
+  <label> bob@microsoft.com</label>
+</div>
+<div>
+  <label> ciri@microsoft.com</label>
+</div>
+<div>
+  <label> david@microsoft.com</label>
+</div>
+<div>
+  <label> elephant@microsoft.com</label>
+</div>
+<div>
+  <label> florence@microsoft.com</label>
+</div>
+<div>
+  <label> gameofthrone@microsoft.com</label>
+</div>
+<div>
+  <label> hamster@microsoft.com</label>
+</div>
+<div>
+  <label> illusional@microsoft.com</label>
+</div>
+</div>
+<div class="modal-footer">
+<button type="button" class="btn btn-secondary" data-dismiss="modal">View POR</button>
+<button type="button" class="btn btn-primary">Return to home</button>
+</div>
+</div>
+</div>
+</div>
